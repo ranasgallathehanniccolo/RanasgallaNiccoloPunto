@@ -45,17 +45,31 @@ public class Test {
         }else{
             System.out.println("Non è un quadrato");
         }
-        do{
-            System.out.println("Vuoi spostare il punto p? s7n");
-            String scelta = input.nextLine();
-            if(scelta == "s"){
-            p.sposta(spaziox, spazioy);
-            if(q.controlloPunto(p) == true){
-                System.out.println("È dentro dal quadrato");
-            }else{
-                System.out.println("È fuori dal quadrato");
+        input.nextLine();
+        String risposta;
+        do {
+            System.out.println("Vuoi spostare il punto P? s/n");
+            risposta = input.nextLine();
+
+            if (risposta.equals("s")) {
+                p.sposta(spaziox, spazioy);
+                System.out.println("Il punto P e stato spostato alle coordinate: (" + p.getX() + ", " + p.getY() + ")");
+
+                if (q.controlloPunto(p)) {
+                    System.out.println("Il punto P e dentro il quadrato.");
+                } else {
+                    System.out.println("Il punto P e fuori dal quadrato.");
+                }
             }
-            }
-        }while(scelta == "s");
+
+        }while (risposta.equals("s"));
+        System.out.println("Raggio del cerchio A?");
+        int raggio = input.nextInt();
+        Cerchio cA = new Cerchio(raggio, x, y);
+        System.out.println("Raggio del cerchio B?");
+        raggio = input.nextInt();
+        Cerchio cB = new Cerchio(raggio, x, y);
+        System.out.println(cA.distanzaCerchi(cB));
+        System.out.println(cA.distanzaDaOrigine());
     }
 }

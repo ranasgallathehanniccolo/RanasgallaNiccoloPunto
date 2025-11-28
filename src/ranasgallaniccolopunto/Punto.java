@@ -9,8 +9,8 @@ package ranasgallaniccolopunto;
  * @author ranasgalla.niccolo
  */
 public class Punto {
-    private double X;
-    private double Y;
+    protected double X;
+    protected double Y;
     
     public Punto(float x, float y){
         this.X=x;
