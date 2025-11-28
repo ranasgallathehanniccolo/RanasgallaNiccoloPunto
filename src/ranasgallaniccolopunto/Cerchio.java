@@ -42,4 +42,7 @@ public class Cerchio extends Punto {
     public float distanzaDaOrigine(){
         return this.distanzaOrigine() - this.raggio;
     }
+    public boolean controlloCerchi(Cerchio c){
+        if(distanzaCerchi(c) > 0)
+    }
 }
